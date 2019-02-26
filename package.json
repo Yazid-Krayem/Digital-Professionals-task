@@ -1,0 +1,25 @@
+{
+  "name": "digital-professionals-task",
+  "version": "1.0.0",
+  "description": "**The Requirements:**",
+  "main": "index.js",
+  "scripts": {
+    "front": "cd front && yarn start",
+    "server": "cd server && nodemon app.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn front\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yazid-krayem/Digital-Professionals-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yazid-krayem/Digital-Professionals-task/issues"
+  },
+  "homepage": "https://github.com/yazid-krayem/Digital-Professionals-task#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "postinstall": "^0.4.2"
+  }
+}
