@@ -8,8 +8,9 @@ React Web App using `Apollo Client`, that will allow anyone with access to
 *CRUD* Category, and *CRUD* Product.
 When Adding a product we’re looking for a dropdown list for category selection.
 
+### Run the Application
 
 ### `yarn dev`
 
-Runs the App
+
 

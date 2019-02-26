@@ -137,14 +137,46 @@ const{GraphQLObjectType,
                         genre: { type: new GraphQLNonNull(GraphQLString) },
                         authorId: { type: new GraphQLNonNull(GraphQLID) }
                     },
-                    resolve: async(root, args) =>{
+                    resolve: async(parent, args) =>{
                         const UpdatedBook = await Book.findByIdAndUpdate(args.id,args);
                         if (!UpdatedBook) {
                           throw new Error('Error')
                         }
                         return UpdatedBook;
                     }
-                }
+                },
+                deleteAuthor:{
+                    type:AuthorType,
+                    args:{
+                        id:{type:new GraphQLNonNull(GraphQLID)},
+                       
+                    },
+                    resolve: async(parent, args)=> {
+                        const deleteAuthor = await Author.findByIdAndRemove(args.id)
+                        if (!deleteAuthor) {
+                          throw new Error('error')
+                        }
+                        return deleteAuthor;
+                      }
+                    
+                    },
+                    updateAuthor:{
+                        type:AuthorType,
+                        args:{
+                            id:{type: new GraphQLNonNull(GraphQLString)},
+                            name: { type: new GraphQLNonNull(GraphQLString) },
+                            age: { type: new GraphQLNonNull(GraphQLInt) },
+                            
+                        },
+                        resolve: async(parent, args) =>{
+                            const updateAuthor = await Author.findByIdAndUpdate(args.id,args);
+                            if (!updateAuthor) {
+                              throw new Error('Error')
+                            }
+                            return updateAuthor;
+                        }
+                    },
+                
         }
     })
     
