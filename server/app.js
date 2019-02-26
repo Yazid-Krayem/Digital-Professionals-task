@@ -3,6 +3,7 @@ const graphqlHTTP = require('express-graphql')
 const schema = require('./schema/schema')
 const mongoose = require('mongoose')
 
+
 const app = express()
 //database LINK
 mongoose.connect("mongodb+srv://rakon1:123@cluster0-8apqr.mongodb.net/test?retryWrites=true")
