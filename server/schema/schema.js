@@ -113,7 +113,38 @@ const{GraphQLObjectType,
                     })
                     return book.save()
                 }
-            }
+            },
+            deleteBook:{
+                type:BookType,
+                args:{
+                    id:{type:new GraphQLNonNull(GraphQLID)},
+                   
+                },
+                resolve: async(parent, args)=> {
+                    const deleteBook = await Book.findByIdAndRemove(args.id)
+                    if (!deleteBook) {
+                      throw new Error('error')
+                    }
+                    return deleteBook;
+                  }
+                
+                },
+                updateBook:{
+                    type:BookType,
+                    args:{
+                        id:{type: new GraphQLNonNull(GraphQLString)},
+                        name: { type: new GraphQLNonNull(GraphQLString) },
+                        genre: { type: new GraphQLNonNull(GraphQLString) },
+                        authorId: { type: new GraphQLNonNull(GraphQLID) }
+                    },
+                    resolve: async(root, args) =>{
+                        const UpdatedBook = await Book.findByIdAndUpdate(args.id,args);
+                        if (!UpdatedBook) {
+                          throw new Error('Error')
+                        }
+                        return UpdatedBook;
+                    }
+                }
         }
     })
     
