@@ -10,5 +10,15 @@ const getBooksList= gql`
     }
 
 `
+const getAuthors =gql`
+{
+  
+    authors{
+      name
+      id
+    
+    }
+  }
+`
 
-export{getBooksList}
+export{getBooksList,getAuthors}
