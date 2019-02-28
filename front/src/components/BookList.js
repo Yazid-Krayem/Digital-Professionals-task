@@ -16,7 +16,6 @@ class BookList extends Component {
     displayBooks(){
 
         var data = this.props.data
-        console.log('BookList',console.log(this.props))
         if(data.loading){
             return <div>loading....</div>
         }else{
@@ -35,7 +34,7 @@ class BookList extends Component {
          
               {this.displayBooks()}
           
-          <button onClick={(e)=>{console.log(this.state.deleted)}}>details</button>
+          <button >details</button>
         <h3>BookDetails</h3>
         <BookDetails 
         bookId={this.state.selected}

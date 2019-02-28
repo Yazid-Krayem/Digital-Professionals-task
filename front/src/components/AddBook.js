@@ -35,7 +35,6 @@ class AddBook extends Component {
     }
    
   render() {
-      console.log(this.state.authourId)
     return (
       <div >
                  <form  onSubmit={ this.onSubmit.bind(this) } >
@@ -49,7 +48,7 @@ class AddBook extends Component {
                 </div>
                 <div >
                     <label>Author:</label>
-                    <select onChange={ (e) => {console.log("hello",e.target.value);this.setState({ authourId: e.target.value })} } >
+                    <select onChange={ (e) => {this.setState({ authourId: e.target.value })} } >
                         <option>Select author</option>
                         { this.displayAuthors() }
                     </select>
