@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo'
 import {updateAuthorQuery,getAuthors} from '../queries/Queries'
-import { toast,ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
 
 class EditAuthor extends Component {
   state={
@@ -13,13 +10,7 @@ class EditAuthor extends Component {
 
   onSubmit(e){
     e.preventDefault()
-    const {name,age}=this.state
-    const{id} = this.props
-    toast('test')
-
-    if(name&&age&&id==null){
-      toast.error('error')
-    }else{
+   
     this.props.update({
       variables: {
          id:this.props.id,
@@ -27,10 +18,9 @@ class EditAuthor extends Component {
          age:this.state.age
       },
       refetchQueries: [{ query: getAuthors }]
-    
+      
   });
-  toast('updated')
-    }
+
   }
     
   render() {
@@ -39,18 +29,17 @@ class EditAuthor extends Component {
       <div >
         <form onSubmit={this.onSubmit.bind(this)}>
           <label>name</label>
-          <input defaultValue={this.props.name}
+          <input 
           onChange={ (e) => this.setState({ name:e.target.value}) }/>
 
           <br />
 
           <label>age</label>
-          <input defaultValue={this.props.age} 
+          <input 
           onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) }
           />
           <button className="warning">update</button>
         </form>
- 
      </div>
     );
   }
