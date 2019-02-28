@@ -6,7 +6,8 @@
   "scripts": {
     "front": "cd front && yarn start",
     "server": "cd server && nodemon app.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn front\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn front\"",
+    "postinstall": "cd front && npm install && cd .. && cd server && npm install"
   },
   "repository": {
     "type": "git",

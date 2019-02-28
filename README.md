@@ -6,8 +6,11 @@ anyone can use the *CRUD* a Category, and *CRUD* a Product, and each product bel
 React Web App using `Apollo Client`.
 
 
-### Run the Application
+## Usage
 
+### `https://github.com/yazid-krayem/Digital-Professionals-task.git`
+### `cd Digital-Professionals-task`
+### `yarn add`
 ### `yarn dev`
 
 
