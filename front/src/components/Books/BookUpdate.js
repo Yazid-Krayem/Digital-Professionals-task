@@ -7,7 +7,8 @@ import {updateBookQuery,getBooksList} from '../queries/Queries'
 class BookUpdate extends Component {
   state={
     name:'',
-    genre:''
+    genre:'',
+    test:''
   }
 
   onSubmit(e){
@@ -25,17 +26,18 @@ class BookUpdate extends Component {
   }
     
   render() {
+    console.log(this.state.test)
     return (
       <div >
         <form onSubmit={this.onSubmit.bind(this)}>
           <label>name</label>
-          <input defaultValue={this.props.name}
+          <input 
           onChange={ (e) => this.setState({ name: (e.target.value) }) }/>
 
           <br />
 
           <label>genre</label>
-          <input defaultValue={this.props.genre} 
+          <input  
           onChange={ (e) => this.setState({ genre:(e.target.value) }) }
           />
           

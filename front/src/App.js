@@ -20,10 +20,11 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
 
-      <div >
       <div className="home" style={{ backgroundImage: `url(${Background})`,backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'}}>
+                  <div >
+
       <br />,
       <br />
       <br />

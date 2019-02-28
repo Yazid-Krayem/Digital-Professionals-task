@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo'
 import {updateAuthorQuery,getAuthors} from '../queries/Queries'
-
+import { toast,ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 class EditAuthor extends Component {
@@ -12,6 +13,13 @@ class EditAuthor extends Component {
 
   onSubmit(e){
     e.preventDefault()
+    const {name,age}=this.state
+    const{id} = this.props
+    toast('test')
+
+    if(name&&age&&id==null){
+      toast.error('error')
+    }else{
     this.props.update({
       variables: {
          id:this.props.id,
@@ -19,9 +27,10 @@ class EditAuthor extends Component {
          age:this.state.age
       },
       refetchQueries: [{ query: getAuthors }]
-
+    
   });
-
+  toast('updated')
+    }
   }
     
   render() {
