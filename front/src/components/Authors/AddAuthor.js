@@ -43,7 +43,7 @@ class AddBook extends Component {
                 </div>
                 <div >
                     <label>age:</label>
-                    <input type="number" onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) } style={{color:'black'}}/>
+                    <input type="number"min="1" max="100" onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) } style={{color:'black'}}/>
                 </div>
                 
                 <button>ADD Author</button>
