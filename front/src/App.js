@@ -7,8 +7,9 @@ import BookList from './components/Books/BookList';
 import AddBook from './components/Books/AddBook';
 import AddAuthor from './components/Authors/AddAuthor';
 import AuthorsList from './components/Authors/AuthorsList';
-import Header from './components/Header';
 import Background from './back.jpeg'
+
+//back-end
 const client = new ApolloClient({
   uri:"http://localhost:8080/graphql"
 })
