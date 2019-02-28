@@ -10,7 +10,7 @@ React Web App using `Apollo Client`.
 
 ### `https://github.com/yazid-krayem/Digital-Professionals-task.git`
 ### `cd Digital-Professionals-task`
-### `yarn add`
+### `yarn install`
 ### `yarn dev`
 
 
