@@ -6,11 +6,7 @@ import EditAthor from './EditAthor';
 
 
 class AuthorDetails extends Component {
-  state={
-    edit:false
-  }
-
- 
+  
 
   deleteAuthor(id){
 
@@ -31,22 +27,25 @@ class AuthorDetails extends Component {
                 <h3>Name:  {author.name}</h3>
                 <p>age:  {author.age}</p>
                 <button onClick={this.deleteAuthor.bind(this)}>X</button>
-                <button >edit</button>
+                  <EditAthor 
+                  id={author.id}
+                  name={author.name}
+                  age={author.age}
+                  />
+                
             </div>
         )
     }
    }
     
   render() {
-    
-
+    console.log(this.props)
     return (
 
       <div >
         
         {this.displayAuthorDetails()}
-        <EditAthor 
-        edit={this.state.edit}/>
+        
       </div>
     );
   }
@@ -57,7 +56,8 @@ graphql(getAuthor,{
     options:(props)=>{
         return{
             variables:{
-                id:props.authorId
+                id:props.authorId,
+               
             }
         }
     }

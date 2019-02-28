@@ -62,6 +62,7 @@ const getAuthor = gql`
 
 query($id:ID){
   author(id:$id){
+    id
     name
     age
   }
