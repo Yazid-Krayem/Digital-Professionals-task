@@ -132,10 +132,9 @@ const{GraphQLObjectType,
                 updateBook:{
                     type:BookType,
                     args:{
-                        id:{type: new GraphQLNonNull(GraphQLString)},
+                        id:{type: new GraphQLNonNull(GraphQLID)},
                         name: { type: new GraphQLNonNull(GraphQLString) },
                         genre: { type: new GraphQLNonNull(GraphQLString) },
-                        authorId: { type: new GraphQLNonNull(GraphQLID) }
                     },
                     resolve: async(parent, args) =>{
                         const UpdatedBook = await Book.findByIdAndUpdate(args.id,args);

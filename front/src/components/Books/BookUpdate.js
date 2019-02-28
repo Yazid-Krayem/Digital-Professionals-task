@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo'
-import {updateAuthorQuery,getAuthors} from '../queries/Queries'
+import {updateBookQuery,getBooksList} from '../queries/Queries'
 
 
 
-class EditAuthor extends Component {
+class BookUpdate extends Component {
   state={
     name:'',
-    age:0
+    genre:''
   }
 
   onSubmit(e){
     e.preventDefault()
-    this.props.update({
+    this.props.updateBook({
       variables: {
          id:this.props.id,
          name:this.state.name,
-         age:this.state.age
+         genre:this.state.genre
       },
-      refetchQueries: [{ query: getAuthors }]
+      refetchQueries: [{ query: getBooksList }]
 
   });
 
   }
     
   render() {
+      console.log(this.props)
     return (
       <div >
         <form onSubmit={this.onSubmit.bind(this)}>
@@ -34,10 +35,11 @@ class EditAuthor extends Component {
 
           <br />
 
-          <label>age</label>
-          <input defaultValue={this.props.age} 
-          onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) }
+          <label>genre</label>
+          <input defaultValue={this.props.genre} 
+          onChange={ (e) => this.setState({ genre:(e.target.value) }) }
           />
+          
           <button>change </button>
         </form>
  
@@ -47,5 +49,5 @@ class EditAuthor extends Component {
 }
 
 export default compose(
-graphql(updateAuthorQuery,{name:'update'}),
-graphql(getAuthors))(EditAuthor);
+graphql(updateBookQuery,{name:'updateBook'}),
+graphql(getBooksList))(BookUpdate);

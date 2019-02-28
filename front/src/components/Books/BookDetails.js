@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql,compose } from 'react-apollo'
-import {getBookQuery,deleteBookQuery,getBooksList} from '../queries/Queries'
+import {getBookQuery,deleteBookQuery,getBooksList,updateBookQuery} from '../queries/Queries'
+import BookUpdate from './BookUpdate';
 
 
 
@@ -25,6 +26,12 @@ class BookDetails extends Component {
                 <p>Genre:  {book.genre}</p>
                 <p>Author: {book.author.name}</p>
                 <button onClick={this.deleteBook.bind(this)}>X</button>
+                <BookUpdate 
+                id={this.props.bookId}
+                name={book.name}
+                genre={book.genre}
+                author={book.author.name}
+                />
             </div>
         )
     }
@@ -50,5 +57,6 @@ graphql(getBookQuery,{
         }
     }
 }),
-graphql(deleteBookQuery,{name:'deleted'})
+graphql(deleteBookQuery,{name:'deleted'}),
+graphql(updateBookQuery,{name:'updateBook'}),
 )(BookDetails);
