@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo'
-import {deleteBookQuery} from './queries/Queries'
+import {deleteAuthorQuery} from '../queries/Queries'
 
 
 
 class BookDetails extends Component {
 
    deleteBook(e){
-    const {deleted}=this.props
-    if(deleted){
+    const {deleteAuthor}=this.props
+    if(deleteAuthor){
         
     }
    }
@@ -24,4 +24,4 @@ class BookDetails extends Component {
                     }
 }
 
-export default graphql(deleteBookQuery)(BookDetails);
+export default graphql(deleteAuthorQuery)(BookDetails);

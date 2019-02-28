@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo'
-import {getAuthors} from './queries/Queries'
+import {getAuthors} from '../queries/Queries'
 import AuthorDetails from './AuthorDetails';
+import DeleteAuthor from './DeleteAuthor';
 
 
 
@@ -9,6 +10,7 @@ import AuthorDetails from './AuthorDetails';
 class AuthorsList extends Component {
     state={
         selected:null,
+        deleted:null
         
     }
    
@@ -16,7 +18,6 @@ class AuthorsList extends Component {
     displayAuthors(){
 
         var data = this.props.data
-        console.log(data)
         if(data.loading){
             return <div>loading....</div>
         }else{
@@ -46,6 +47,8 @@ class AuthorsList extends Component {
        <AuthorDetails 
        authorId={this.state.selected}
        />
+       <DeleteAuthor 
+       deleted={this.state.deleted}/>
       </div>
     );
   }

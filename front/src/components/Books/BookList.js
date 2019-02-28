@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo'
-import {getBooksList} from './queries/Queries'
+import {getBooksList} from '../queries/Queries'
 import BookDetails from './BookDetails';
 import DeleteBooks from './DeleteBooks';
 

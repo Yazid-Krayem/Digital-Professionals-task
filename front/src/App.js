@@ -3,10 +3,10 @@ import './App.css';
 import ApolloClient from "apollo-boost"
 import{ApolloProvider} from 'react-apollo'
 
-import BookList from './components/BookList';
-import AddBook from './components/AddBook';
-import AddAuthor from './components/AddAuthor';
-import AuthorsList from './components/AuthorsList';
+import BookList from './components/Books/BookList';
+import AddBook from './components/Books/AddBook';
+import AddAuthor from './components/Authors/AddAuthor';
+import AuthorsList from './components/Authors/AuthorsList';
 
 const client = new ApolloClient({
   uri:"http://localhost:8080/graphql"
