@@ -3,6 +3,7 @@ import { graphql,compose } from 'react-apollo'
 import {getAuthors,getAuthor, deleteAuthorQuery,updateAuthorQuery} from '../queries/Queries'
 import EditAthor from './EditAthor';
 
+import Popup from "reactjs-popup";
 
 
 class AuthorDetails extends Component {
@@ -23,18 +24,21 @@ class AuthorDetails extends Component {
     
     if(author){
         return(
-            <div>
+          <Popup trigger={<button> about: {author.name} </button>}position="right center" >
+
+            <div style={{color:"black"}}>
                 <h3>Name:  {author.name}</h3>
-                <p>age:  {author.age}</p>
-                <button onClick={this.deleteAuthor.bind(this)}>X</button>
+                <h4>age:  {author.age}</h4>
+                <button className="error"onClick={this.deleteAuthor.bind(this)}>Delete</button>
                   <EditAthor 
                   id={this.props.authorId}
                   name={author.name}
                   age={author.age}
                   />
-                 
                 
             </div>
+            </Popup>
+
         )
     }
    }

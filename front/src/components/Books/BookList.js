@@ -34,7 +34,6 @@ class BookList extends Component {
          
               {this.displayBooks()}
           
-          <button >details</button>
         <h3>BookDetails</h3>
         <BookDetails 
         bookId={this.state.selected}

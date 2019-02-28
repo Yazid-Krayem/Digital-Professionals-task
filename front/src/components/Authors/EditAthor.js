@@ -6,8 +6,8 @@ import {updateAuthorQuery,getAuthors} from '../queries/Queries'
 
 class EditAuthor extends Component {
   state={
-    name:'',
-    age:0
+    name:null,
+    age:null
   }
 
   onSubmit(e){
@@ -25,12 +25,13 @@ class EditAuthor extends Component {
   }
     
   render() {
+    console.log(this.props)
     return (
       <div >
         <form onSubmit={this.onSubmit.bind(this)}>
           <label>name</label>
           <input defaultValue={this.props.name}
-          onChange={ (e) => this.setState({ name: (e.target.value) }) }/>
+          onChange={ (e) => this.setState({ name:e.target.value}) }/>
 
           <br />
 
@@ -38,7 +39,7 @@ class EditAuthor extends Component {
           <input defaultValue={this.props.age} 
           onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) }
           />
-          <button>change </button>
+          <button className="warning">update</button>
         </form>
  
      </div>

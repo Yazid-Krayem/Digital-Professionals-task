@@ -46,7 +46,7 @@ class AddBook extends Component {
                     <input type="number" onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) } />
                 </div>
                 
-                <button>+</button>
+                <button>ADD Author</button>
             </form> 
       </div>
     );

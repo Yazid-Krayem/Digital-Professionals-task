@@ -36,7 +36,6 @@ class AuthorsList extends Component {
          
               {this.displayAuthors()}
           
-          <button >details</button>
         {/* <BookDetails 
         bookId={this.state.selected}
         />

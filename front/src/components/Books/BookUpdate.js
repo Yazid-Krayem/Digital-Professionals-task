@@ -40,7 +40,7 @@ class BookUpdate extends Component {
           onChange={ (e) => this.setState({ genre:(e.target.value) }) }
           />
           
-          <button>change </button>
+          <button className="warning">Update </button>
         </form>
  
      </div>
