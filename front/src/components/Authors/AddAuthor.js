@@ -39,11 +39,11 @@ class AddBook extends Component {
                  <form  onSubmit={ this.onSubmit.bind(this) } >
                 <div >
                     <label>Author name:</label>
-                    <input type="text" onChange={ (e) => {this.setState({ name: e.target.value })} } />
+                    <input type="text" onChange={ (e) => {this.setState({ name: e.target.value })} } style={{color:'black'}} />
                 </div>
                 <div >
                     <label>age:</label>
-                    <input type="number" onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) } />
+                    <input type="number" onChange={ (e) => this.setState({ age: parseFloat(e.target.value) }) } style={{color:'black'}}/>
                 </div>
                 
                 <button>ADD Author</button>
