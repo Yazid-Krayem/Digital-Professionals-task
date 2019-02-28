@@ -163,7 +163,7 @@ const{GraphQLObjectType,
                     updateAuthor:{
                         type:AuthorType,
                         args:{
-                            id:{type: new GraphQLNonNull(GraphQLString)},
+                            id:{type: new GraphQLNonNull(GraphQLID)},
                             name: { type: new GraphQLNonNull(GraphQLString) },
                             age: { type: new GraphQLNonNull(GraphQLInt) },
                             

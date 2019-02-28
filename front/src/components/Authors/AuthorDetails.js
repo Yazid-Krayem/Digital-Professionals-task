@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { graphql,compose } from 'react-apollo'
-import {getAuthors,getAuthor, deleteAuthorQuery} from '../queries/Queries'
+import {getAuthors,getAuthor, deleteAuthorQuery,updateAuthorQuery} from '../queries/Queries'
 import EditAthor from './EditAthor';
 
 
 
 class AuthorDetails extends Component {
   
-
+  o
   deleteAuthor(id){
 
     this.props.deleteAuthor({
@@ -28,10 +28,11 @@ class AuthorDetails extends Component {
                 <p>age:  {author.age}</p>
                 <button onClick={this.deleteAuthor.bind(this)}>X</button>
                   <EditAthor 
-                  id={author.id}
+                  id={this.props.authorId}
                   name={author.name}
                   age={author.age}
                   />
+                 
                 
             </div>
         )
@@ -62,5 +63,6 @@ graphql(getAuthor,{
         }
     }
 }),
-graphql(deleteAuthorQuery,{name:'deleteAuthor'})
+graphql(deleteAuthorQuery,{name:'deleteAuthor'}),
+graphql(updateAuthorQuery,{name:'update'})
 )(AuthorDetails);

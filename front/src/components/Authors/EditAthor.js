@@ -26,7 +26,6 @@ class EditAuthor extends Component {
     
   render() {
       console.log(this.props)
-      console.log(this.state)
     return (
       <div >
         <form onSubmit={this.onSubmit.bind(this)}>

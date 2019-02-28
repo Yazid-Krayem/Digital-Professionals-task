@@ -14,9 +14,8 @@ const getAuthors =gql`
 {
   
     authors{
-      name
       id
-    
+      name
     }
   }
 `
