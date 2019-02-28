@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { graphql,compose } from 'react-apollo'
 import {getAuthors,getAuthor, deleteAuthorQuery} from '../queries/Queries'
+import EditAthor from './EditAthor';
 
 
 
 class AuthorDetails extends Component {
+  state={
+    edit:false
+  }
+
+ 
 
   deleteAuthor(id){
 
@@ -25,20 +31,22 @@ class AuthorDetails extends Component {
                 <h3>Name:  {author.name}</h3>
                 <p>age:  {author.age}</p>
                 <button onClick={this.deleteAuthor.bind(this)}>X</button>
+                <button >edit</button>
             </div>
         )
     }
    }
     
   render() {
-    console.log(this.props.data.variables)
-    console.log('data',this.props)
+    
 
     return (
 
       <div >
         
         {this.displayAuthorDetails()}
+        <EditAthor 
+        edit={this.state.edit}/>
       </div>
     );
   }
