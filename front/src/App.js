@@ -25,7 +25,7 @@ class App extends Component {
             backgroundRepeat: 'no-repeat'}}>
                   <div >
 
-      <br />,
+      
       <br />
       <br />
         <div className="books">
