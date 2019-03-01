@@ -43,7 +43,6 @@ class App extends Component {
         <AuthorsList />
         </div>
         <div className="addAuthor">
-        <p>Add Author</p>
         <AddAuthor/>
         </div>
         <br />
