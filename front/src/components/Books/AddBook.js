@@ -37,18 +37,18 @@ class AddBook extends Component {
   render() {
     return (
       <div >
-                 <form  onSubmit={ this.onSubmit.bind(this) }  style={{color:'black'}}>
+                 <form  onSubmit={ this.onSubmit.bind(this) }  style={{color:'white'}}>
                 <div >
                     <label>Book name:</label>
-                    <input type="text" onChange={ (e) => {this.setState({ name: e.target.value })} } />
+                    <input style={{color:'black'}} type="text" onChange={ (e) => {this.setState({ name: e.target.value })} } />
                 </div>
                 <div >
                     <label>Genre:</label>
-                    <input type="text" onChange={ (e) => this.setState({ genre: e.target.value }) } />
+                    <input style={{color:'black'}} type="text" onChange={ (e) => this.setState({ genre: e.target.value }) } />
                 </div>
                 <div >
                     <label>Author:</label>
-                    <select onChange={ (e) => {this.setState({ authourId: e.target.value })} } >
+                    <select style={{color:'black'}} onChange={ (e) => {this.setState({ authourId: e.target.value })} } >
                         <option>Select author</option>
                         { this.displayAuthors() }
                     </select>
