@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { graphql,compose } from 'react-apollo'
-import {getAuthors,getAuthor, deleteAuthorQuery,updateAuthorQuery} from '../queries/Queries'
+import {getAuthors,getAuthor, deleteAuthorQuery,updateAuthorQuery, getBooksList} from '../queries/Queries'
 import EditAthor from './EditAthor';
 
 import Popup from "reactjs-popup";
@@ -8,14 +8,14 @@ import Popup from "reactjs-popup";
 
 class AuthorDetails extends Component {
   
-  o
+  
   deleteAuthor(id){
-
+    
     this.props.deleteAuthor({
       variables: {
          id:this.props.authorId
       },
-      refetchQueries: [{ query: getAuthors }]
+      refetchQueries: [{ query: getAuthors },{query:getBooksList}]
 
   });
     }
@@ -44,8 +44,12 @@ class AuthorDetails extends Component {
    }
     
   render() {
-    return (
+    const books = this.props.books.books;
+   // const book = books.id
+   if(books)
+    console.log(books.id)
 
+    return (
       <div >
         
         {this.displayAuthorDetails()}
@@ -66,6 +70,7 @@ graphql(getAuthor,{
         }
     }
 }),
+graphql(getBooksList,{name:"books"}),
 graphql(deleteAuthorQuery,{name:'deleteAuthor'}),
 graphql(updateAuthorQuery,{name:'update'})
 )(AuthorDetails);

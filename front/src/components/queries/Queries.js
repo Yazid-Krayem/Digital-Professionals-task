@@ -6,6 +6,9 @@ const getBooksList= gql`
             id
             name
             genre
+            author{
+              id
+            }
         }
     }
 

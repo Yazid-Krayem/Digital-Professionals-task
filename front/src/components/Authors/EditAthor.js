@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo'
-import {updateAuthorQuery,getAuthors} from '../queries/Queries'
+import {updateAuthorQuery,getAuthors, getBooksList} from '../queries/Queries'
 
 class EditAuthor extends Component {
   state={
@@ -24,7 +24,6 @@ class EditAuthor extends Component {
   }
     
   render() {
-    console.log(this.props)
     return (
       <div >
         <form onSubmit={this.onSubmit.bind(this)}>
@@ -46,5 +45,6 @@ class EditAuthor extends Component {
 }
 
 export default compose(
+  graphql(getBooksList,{name:"books"}),
 graphql(updateAuthorQuery,{name:'update'}),
 graphql(getAuthors))(EditAuthor);

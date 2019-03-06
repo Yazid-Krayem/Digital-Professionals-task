@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo'
-import {getAuthors} from '../queries/Queries'
+import { graphql,compose } from 'react-apollo'
+import {getAuthors,getBooksList} from '../queries/Queries'
 import AuthorDetails from './AuthorDetails';
 import DeleteAuthor from './DeleteAuthor';
 
@@ -17,7 +17,7 @@ class AuthorsList extends Component {
     
     displayAuthors(){
 
-        var data = this.props.data
+        var data = this.props.getAuthors
         if(data.loading){
             return <div>loading....</div>
         }else{
@@ -31,6 +31,7 @@ class AuthorsList extends Component {
         
     }
   render() {
+    // console.log('authorsList',this.props.getBooksList.books)
     return (
       <div >
          
@@ -47,10 +48,18 @@ class AuthorsList extends Component {
        authorId={this.state.selected}
        />
        <DeleteAuthor 
-       deleted={this.state.deleted}/>
+       deleted={this.state.deleted}
+       books={this.props.getBooksList.books}
+       authorId={this.props.getAuthors.id}
+       />
+       
+
       </div>
     );
   }
 }
 
-export default graphql(getAuthors)(AuthorsList);
+export default compose(
+  graphql(getAuthors,{name:"getAuthors"}),
+  graphql(getBooksList,{name:"getBooksList"}))(AuthorsList)
+

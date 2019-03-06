@@ -7,14 +7,14 @@ import {deleteAuthorQuery} from '../queries/Queries'
 class BookDetails extends Component {
 
    deleteBook(e){
-    const {deleteAuthor}=this.props
+    const {deleteAuthor,Books,deleted}=this.props
+    
     if(deleteAuthor){
         
     }
    }
     
   render() {
-
     return (
             <div>
                 {this.deleteBook()}

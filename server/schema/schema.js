@@ -151,11 +151,13 @@ const{GraphQLObjectType,
                        
                     },
                     resolve: async(parent, args)=> {
+                        const deleteBook = await Book.deleteMany({authourId: args.id})
                         const deleteAuthor = await Author.findByIdAndRemove(args.id)
+
                         if (!deleteAuthor) {
                           throw new Error('error')
                         }
-                        return deleteAuthor;
+                        return deleteAuthor, deleteBook;
                       }
                     
                     },
