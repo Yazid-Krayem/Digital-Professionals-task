@@ -2,7 +2,7 @@
 
 
  `NodeJS`, `Apollo Server`, `MongoDB`,`GraphQL API`.
-anyone can use the *CRUD* a Category, and *CRUD* a Product, and each product belong to a category.
+anyone can use the *CRUD* a Book, and *CRUD* a Author, and each Book belong to a Author.
 React Web App using `Apollo Client`.
 
 
