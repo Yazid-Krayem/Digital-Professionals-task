@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yazid-krayem/Digital-Professionals-task.git"
+    "url": "git+https://github.com/Yazid-Krayem/Digital-Professionals-task.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yazid-krayem/Digital-Professionals-task/issues"
+    "url": "https://github.com/Yazid-Krayem/Digital-Professionals-task/issues"
   },
-  "homepage": "https://github.com/yazid-krayem/Digital-Professionals-task#readme",
+  "homepage": "https://github.com/Yazid-Krayem/Digital-Professionals-task#readme",
   "dependencies": {
     "concurrently": "^4.1.0",
     "postinstall": "^0.4.2",
